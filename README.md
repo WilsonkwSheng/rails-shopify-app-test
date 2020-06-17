@@ -1,9 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Assuming you have shopify store and app is ready.
+You will need API key and secret from Shopify.
+In order to use this on development. You may need to install ngrok.
+To install ngrok enter $ brew cask install ngrok.
+Afterwards, enter $ rails s and then $ ngrok http 3000.
+Always change your redirect uri for App URL and Whitelisted redirection URL(s) in https://partners.shopify.com with the values get from ngrok terminal. You may have to keep change the url as ngrok have expiry usage.
 
 * Ruby version
 
