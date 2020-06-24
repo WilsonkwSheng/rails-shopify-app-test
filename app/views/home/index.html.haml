@@ -15,8 +15,9 @@
   %p This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks
 
 %h2 Shop data
-%p= @shop.data.shop.name
-%p= @shop.data.shop.url
+- if @shop.present?
+  %p= @shop.data.shop.name
+  %p= @shop.data.shop.url
 
 %h2 Customers data
 - @customers.each do |customer|
