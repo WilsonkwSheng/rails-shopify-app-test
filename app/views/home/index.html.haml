@@ -1,0 +1,25 @@
+%h2 Products
+%ul
+  - @products.each do |product|
+    = image_tag product.image.src
+    %li= link_to product.title, "https://#{@current_shopify_session.domain}/admin/products/#{product.id}", target: "_top"
+%hr/
+%h2 Webhooks
+- if @webhooks.present?
+  %ul
+    - @webhooks.each do |webhook|
+      %li
+        = webhook.topic
+        \: #{webhook.address}
+- else
+  %p This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks
+
+%h2 Shop data
+%p= @shop.data.shop.name
+%p= @shop.data.shop.url
+
+%h2 Customers data
+- @customers.each do |customer|
+  %p= customer.email
+  %p= customer.first_name
+  %p= customer.last_name
